@@ -1,0 +1,3 @@
+sqlite> SELECT y.value FROM (SELECT x.row AS row,x.col AS col,SUM(x.value) AS value FROM (SELECT A.row_num AS row,B.col_num AS col,A.value*B.value AS value FROM A,B WHERE A.col_num = B.row_num) x GROUP BY x.row,x.col HAVING SUM(x.value)) y WHERE y.row = 2 AND y.col = 3;
+2874
+
